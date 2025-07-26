@@ -588,26 +588,19 @@
           gap: 25px;
         }
 
-        /* --- ✨ [NOVA ABORDAGEM] Centralização da Seção "Professora" --- */
+        /* --- Centralização da Seção "Professora" no Mobile --- */
         #teacher .grid-2 {
           display: flex;
-          flex-direction: column-reverse; /* Coloca a imagem acima do texto */
+          flex-direction: column-reverse; 
           gap: 40px;
         }
         
-        /* 1. Transforma o container da imagem em flexbox para controlar o alinhamento */
-        .teacher-image-container {
-            display: flex;
-            justify-content: center; /* Centraliza o item (a imagem) horizontalmente */
+        #teacher img {
+            max-width: 50%;
+            /* A centralização agora é feita pelo container com "style" no HTML */
         }
         
-        /* 2. Garante que a imagem não ultrapasse o limite de tamanho */
-        #teacher .teacher-image-container img {
-            max-width: 50%;
-        }
-
         #teacher .text-content {
-          /* Esta regra centraliza o bloco de texto (títulos e parágrafo). */
           text-align: center;
         }
         /* --- Fim da alteração --- */
@@ -622,12 +615,12 @@
 
         /* ✨ Ativação da Barra de Ação Fixa */
         body {
-          padding-bottom: 100px; /* Espaço para a barra fixa não sobrepor o footer */
+          padding-bottom: 100px; 
         }
         .sticky-cta-bar {
-          display: block; /* Mostra a barra fixa no mobile */
+          display: block; 
         }
-        /* Oculta o botão de compra original na seção de preço para evitar redundância */
+        
         #pricing .cta-container {
           display: none;
         }
@@ -1003,10 +996,12 @@
               onda milionária.
             </p>
           </div>
-          <div class="reveal teacher-image-container">
+          
+          <div class="reveal" style="display: flex; justify-content: center;">
             <img
               src="https://i.postimg.cc/L8dqV9mD/Design-sem-nome-1.png"
               alt="Foto da professora Júlia Rodriguez"
+              style="max-width: 50%; height: auto;"
             />
           </div>
         </div>
