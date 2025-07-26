@@ -588,18 +588,27 @@
           gap: 25px;
         }
 
-        /* --- ✨ [NOVA ALTERAÇÃO] Centralização da Seção "Professora" --- */
+        /* --- ✨ [NOVA ABORDAGEM] Centralização da Seção "Professora" --- */
         #teacher .grid-2 {
           display: flex;
-          flex-direction: column-reverse;
+          flex-direction: column-reverse; /* Coloca a imagem acima do texto */
           gap: 40px;
         }
-        #teacher img {
-          max-width: 50%;
-          margin: 0 auto;
+        
+        /* 1. Transforma o container da imagem em flexbox para controlar o alinhamento */
+        .teacher-image-container {
+            display: flex;
+            justify-content: center; /* Centraliza o item (a imagem) horizontalmente */
         }
+        
+        /* 2. Garante que a imagem não ultrapasse o limite de tamanho */
+        #teacher .teacher-image-container img {
+            max-width: 50%;
+        }
+
         #teacher .text-content {
-          text-align: center; /* Centraliza todo o texto (h2, h3, p) */
+          /* Esta regra centraliza o bloco de texto (títulos e parágrafo). */
+          text-align: center;
         }
         /* --- Fim da alteração --- */
 
@@ -994,7 +1003,7 @@
               onda milionária.
             </p>
           </div>
-          <div class="reveal">
+          <div class="reveal teacher-image-container">
             <img
               src="https://i.postimg.cc/L8dqV9mD/Design-sem-nome-1.png"
               alt="Foto da professora Júlia Rodriguez"
@@ -1002,7 +1011,7 @@
           </div>
         </div>
       </section>
-
+      
       <section id="vagas-limitadas">
         <div class="container text-center">
           <div class="reveal">
