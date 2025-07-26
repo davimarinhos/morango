@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morango do Amor – A Delícia do Momento!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      /* --- Reset e Configurações Globais --- */
+      :root {
+        --color-primary: #d72c3a; /* Vermelho morango sofisticado */
+        --color-primary-light: #fff5f6; /* Rosa MUITO claro para fundos */
+        --color-dark: #1d1d1f; /* Quase preto para textos */
+        --color-light: #ffffff; /* Branco puro */
+        --color-bg-alt: #f5f5f7; /* Cinza claro para alternar fundos */
+        --color-gray: #6e6e73;
+        --color-green: #34c759;
+        --font-family: "Inter", sans-serif;
+        --border-radius: 12px;
+        --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-family);
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* --- Utilitários e Layout --- */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 100px 0;
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 60px 0;
+        }
+      }
+
+      .grid {
+        display: grid;
+        gap: 30px;
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+      h2 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+        color: var(--color-gray);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .section-title {
+        margin-bottom: 60px;
+      }
+      @media (max-width: 768px) {
+        .section-title {
+          margin-bottom: 40px;
+        }
+      }
+      .section-title span {
+        color: var(--color-primary);
+      }
+
+      /* --- Animação de Scroll --- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* --- Componentes --- */
+      .btn {
+        display: inline-block;
+        background-color: var(--color-primary);
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        transform: scale(1);
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        background-color: #c2212f;
+        box-shadow: 0 10px 20px rgba(215, 44, 58, 0.25);
+      }
+
+      .btn-large {
+        padding: 20px 45px;
+        font-size: 1.3rem;
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.03);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 30px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* --- Header --- */
+      .top-banner {
+        background-color: var(--color-primary);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-weight: 600;
+      }
+
+      /* --- Seção Hero --- */
+      #hero {
+        padding-top: 60px;
+        padding-bottom: 100px;
+        text-align: center;
+      }
+      #hero .emoji {
+        font-size: 5rem;
+        display: block;
+        margin-bottom: 20px;
+      }
+      #hero h1 {
+        color: var(--color-dark);
+        margin-bottom: 10px;
+      }
+      #hero h1 span {
+        color: var(--color-primary);
+      }
+      #hero .subtitle {
+        font-size: 1.5rem;
+        color: var(--color-gray);
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #hero .sub-subtitle {
+        font-size: 1rem;
+        color: var(--color-gray);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+      #hero .ratings {
+        margin: 40px 0;
+      }
+      #hero .ratings img {
+        max-width: 300px;
+      }
+      #hero .cta-container {
+        margin-top: 40px;
+      }
+
+      #learn {
+        background-color: var(--color-bg-alt);
+      }
+
+      /* --- Seção "O que você vai aprender" --- */
+      #learn .learn-card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 30px;
+        text-align: left;
+        box-shadow: var(--shadow);
+      }
+      .learn-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .learn-card h3 {
+        margin-bottom: 10px;
+      }
+      .learn-card p {
+        margin-bottom: 20px;
+      }
+      .learn-card ul {
+        list-style: none;
+        padding: 0;
+      }
+      .learn-card ul li {
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 10px;
+        color: var(--color-gray);
+      }
+      .learn-card ul li::before {
+        content: "🍓";
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+      }
+
+      #reasons {
+        background-color: var(--color-primary-light);
+      }
+      #reasons .reason-card {
+        text-align: left;
+        padding: 30px;
+      }
+      #reasons .reason-card .icon {
+        font-size: 2.5rem;
+        color: var(--color-primary);
+        margin-bottom: 15px;
+        display: inline-block;
+      }
+      #reasons .reason-card h3 {
+        margin-bottom: 10px;
+      }
+
+      /* --- Seção Testimonials & Gallery (Carousels) --- */
+      #testimonials {
+        background-color: var(--color-light);
+      }
+      .carousel-container {
+        overflow: hidden;
+        width: 100%;
+        padding: 20px 0;
+      }
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+      }
+      .carousel-item {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+      }
+      .carousel-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+      @media (min-width: 500px) {
+        .carousel-item {
+          flex: 0 0 45%;
+        }
+      }
+      @media (min-width: 768px) {
+        .carousel-item {
+          flex: 0 0 30%;
+        }
+      }
+      .carousel-track::-webkit-scrollbar {
+        display: none;
+      }
+      .carousel-track {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* --- Seção Bônus --- */
+      #bonus {
+        background-color: var(--color-dark);
+      }
+      #bonus .section-title {
+        color: var(--color-light);
+      }
+      .bonus-card {
+        padding: 0;
+        background-color: white;
+        text-align: left;
+      }
+      .bonus-card .bonus-image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+      }
+      .bonus-card-content {
+        padding: 20px;
+        flex-grow: 1;
+      }
+      .bonus-card-content h3 {
+        color: var(--color-dark);
+        margin-bottom: 10px;
+      }
+      .bonus-card-footer {
+        padding: 15px 20px;
+        border-top: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .bonus-card .tag {
+        background-color: var(--color-green);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+      .bonus-card .price-old {
+        color: var(--color-primary);
+        text-decoration: line-through;
+      }
+
+      #guarantee {
+        background-color: var(--color-bg-alt);
+      }
+      #guarantee .grid-2 {
+        align-items: center;
+      }
+      #guarantee img {
+        max-width: 100%;
+        border-radius: var(--border-radius);
+      }
+
+      /* --- Seção Professora --- */
+      #teacher {
+        background-color: var(--color-primary-light);
+        align-items: center;
+      }
+      #teacher img {
+        max-width: 100%;
+        border-radius: 50%;
+        box-shadow: var(--shadow);
+      }
+
+      /* --- Vagas Limitadas --- */
+      #vagas-limitadas {
+        background-color: var(--color-light);
+      }
+      #vagas-limitadas .progress-bar-container {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 50px;
+        margin: 20px 0;
+        overflow: hidden;
+      }
+      #vagas-limitadas .progress-bar {
+        width: 87%;
+        background-color: var(--color-primary);
+        height: 30px;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        font-weight: bold;
+      }
+
+      /* --- Seção de Preço --- */
+      #pricing {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+        text-align: center;
+      }
+      #pricing .pricing-box {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        border-radius: var(--border-radius);
+        padding: 40px;
+        max-width: 500px;
+        margin: 40px auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      /* ✨ ADICIONADO: Estilo para a imagem do ebook no card de preço */
+      #pricing .pricing-ebook-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      #pricing .price-old {
+        text-decoration: line-through;
+        color: var(--color-gray);
+        font-size: 1.5rem;
+      }
+      #pricing .price-main {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--color-dark);
+        margin: 10px 0;
+      }
+      #pricing .price-main span {
+        background-color: var(--color-primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 8px;
+      }
+      #pricing .price-alt {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color-green);
+      }
+      #pricing ul {
+        list-style: none;
+        text-align: left;
+        margin: 30px 0;
+      }
+      #pricing ul li {
+        margin-bottom: 10px;
+        padding-left: 30px;
+        position: relative;
+      }
+      #pricing ul li::before {
+        content: "✅";
+        position: absolute;
+        left: 0;
+      }
+      #pricing .cta-container {
+        margin-top: 30px;
+      }
+
+      /* --- FAQ --- */
+      #faq {
+        background-color: var(--color-bg-alt);
+      }
+      .faq-item {
+        background: white;
+        border: 1px solid #eee;
+        border-radius: var(--border-radius);
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+      .faq-item summary {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 20px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary::after {
+        content: "+";
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+      .faq-item[open] summary {
+        border-bottom: 1px solid #eee;
+      }
+      .faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+      .faq-item .faq-content {
+        padding: 20px;
+      }
+
+      /* --- Footer --- */
+      footer {
+        background-color: var(--color-dark);
+        color: var(--color-gray);
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 0.9rem;
+      }
+
+      /* --- Media Queries para Responsividade --- */
+      @media (max-width: 992px) {
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+        .grid-2,
+        .grid-3,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+        #teacher .grid-2 {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+        #teacher img {
+          max-width: 60%;
+          margin: 0 auto 30px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top-banner">
+      <div class="container">✔️ CUPOM DE DESCONTO APLICADO</div>
+    </header>
+
+    <main>
+      <section id="hero" class="container reveal">
+        <span class="emoji">🍓</span>
+        <h1>MORANGO <span>DO AMOR</span></h1>
+        <p class="subtitle">
+          Ganhe até R$ 1.300,00 por dia com a Delícia do Momento!
+        </p>
+        <p class="sub-subtitle">
+          Aprenda os <strong>Segredos do Doce</strong> que viralizou e está
+          fazendo mulheres ganharem até <strong>R$ 1.300 por dia</strong> sem
+          sair de casa!
+        </p>
+
+        <div class="ratings">
+          <img
+            src="https://receitassecretas.shop/wp-content/uploads/2024/10/RzwfYu0814949.webp"
+            alt="Avaliações 5 estrelas"
+          />
+          <p><strong>+2 mil alunas inscritas</strong></p>
+        </div>
+
+        <div class="cta-container">
+          <a
+            href="https://pay.cakto.com.br/yekdqt7_495208"
+            class="btn btn-large"
+            >EU QUERO O CURSO AGORA!</a
+          >
+        </div>
+
+        <img
+          src="https://receitassecretas.shop/wp-content/uploads/2024/10/fKRpgL5960905.webp"
+          alt="Métodos de Pagamento"
+          style="max-width: 100%; margin-top: 30px"
+        />
+      </section>
+
+      <section id="learn">
+        <div class="container">
+          <h2 class="section-title text-center reveal">
+            O que você vai <span>aprender</span>
+          </h2>
+          <div class="grid grid-2">
+            <div class="learn-card reveal">
+              <img
+                src="https://receitassecretas.shop/wp-content/uploads/2025/07/1.png"
+                alt="Seleção de Morangos"
+              />
+              <h3>🍓 Seleção e Preparo dos Morangos</h3>
+              <p>
+                Descubra os segredos para escolher e preparar morangos perfeitos
+                que garantem o sucesso da sua receita desde o primeiro passo.
+              </p>
+              <ul>
+                <li>Morangos firmes, secos e sem machucados</li>
+                <li>Técnica de higienização sem perder firmeza</li>
+                <li>Como secar para aderência perfeita</li>
+                <li>Como espetar o palito sem atravessar a fruta</li>
+                <li>Conservação dos morangos para preparo</li>
+              </ul>
+            </div>
+            <div class="learn-card reveal">
+              <img
+                src="https://receitassecretas.shop/wp-content/uploads/2025/07/2.png"
+                alt="Qualidade dos Morangos"
+              />
+              <h3>🍃 Tipos e Qualidade dos Morangos</h3>
+              <p>
+                Conheça os diferentes tipos de morango e como cada um influencia
+                no resultado final do seu doce.
+              </p>
+              <ul>
+                <li>Morango 'Oso Grande' - características ideais</li>
+                <li>Diferenças entre pequenos e grandes</li>
+                <li>Como identificar morangos no ponto certo</li>
+                <li>Morangos de estufa vs. campo aberto</li>
+                <li>Sinais de frescor: folhas verdes e aparência saudável</li>
+              </ul>
+            </div>
+            <div class="learn-card reveal">
+              <img
+                src="https://receitassecretas.shop/wp-content/uploads/2025/07/4.png"
+                alt="Calda Crocante"
+              />
+              <h3>🔥 Calda Crocante - O Grande Segredo</h3>
+              <p>
+                Domine a técnica mais desafiadora: a calda que define se seu
+                morango será do amor ou do ódio!
+              </p>
+              <ul>
+                <li>Ponto exato com termômetro</li>
+                <li>Teste da água gelada (som de vidro)</li>
+                <li>Ingredientes corretos</li>
+                <li>Regra de ouro: nunca mexer após ferver</li>
+                <li>Como evitar cristalização da calda</li>
+              </ul>
+            </div>
+            <div class="learn-card reveal">
+              <img
+                src="https://receitassecretas.shop/wp-content/uploads/2025/07/3-1.png"
+                alt="Conservação e Armazenamento"
+              />
+              <h3>📦 Conservação e Armazenamento</h3>
+              <p>
+                Aprenda as técnicas profissionais para manter seus morangos
+                frescos e crocantes por mais tempo.
+              </p>
+              <ul>
+                <li>Prazo de validade</li>
+                <li>Como selar com plástico individualmente</li>
+                <li>Embalagens firmes que evitam rachaduras</li>
+                <li>Técnicas de conservação para venda</li>
+                <li>Cuidados para delivery e transporte</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reasons">
+        <div class="container">
+          <h2 class="section-title text-center reveal">
+            Motivos para você <span>adquirir o curso</span>
+          </h2>
+          <div class="grid grid-3">
+            <div class="card reason-card reveal">
+              <span class="icon">🎓</span>
+              <h3>Aprenda Mesmo Sendo Iniciante</h3>
+              <p>
+                Curso com passo a passo didático e facilitado, com técnicas
+                exclusivas que poucos dominam.
+              </p>
+            </div>
+            <div class="card reason-card reveal">
+              <span class="icon">💰</span>
+              <h3>Baixo Investimento</h3>
+              <p>
+                Comece com utensílios básicos e ingredientes fáceis de
+                encontrar, sem grandes custos iniciais.
+              </p>
+            </div>
+            <div class="card reason-card reveal">
+              <span class="icon">🚀</span>
+              <h3>Mercado em Explosão</h3>
+              <p>
+                O Morango do Amor viralizou e continua em alta, criando um
+                mercado com demanda gigantesca.
+              </p>
+            </div>
+            <div class="card reason-card reveal">
+              <span class="icon">📈</span>
+              <h3>Margem de Lucro Extraordinária</h3>
+              <p>
+                Uma das melhores margens da confeitaria. Venda por até R$15 com
+                custo de R$3,50.
+              </p>
+            </div>
+            <div class="card reason-card reveal">
+              <span class="icon">🏆</span>
+              <h3>Satisfação Pessoal e Profissional</h3>
+              <p>
+                Domine uma técnica que está fazendo confeiteiros se tornarem
+                referência nacional.
+              </p>
+            </div>
+            <div class="card reason-card reveal">
+              <span class="icon">🤝</span>
+              <h3>Aprenda com Outros Profissionais</h3>
+              <p>
+                Junte-se a mais de 2.000 confeiteiras em nosso grupo VIP para
+                trocar experiências e ter suporte direto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <div class="container">
+          <h2 class="section-title text-center reveal">
+            O que nossas alunas estão <span>falando</span>
+          </h2>
+          <div class="carousel-container reveal">
+            <div class="carousel-track">
+              <div class="carousel-item">
+                <img
+                  src="https://receitassecretas.shop/wp-content/uploads/2025/07/PHOTO-2025-07-11-22-54-48-1.jpg"
+                  alt="Depoimento 1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://receitassecretas.shop/wp-content/uploads/2025/07/PHOTO-2025-07-12-15-21-52-1.jpg"
+                  alt="Depoimento 2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://receitassecretas.shop/wp-content/uploads/2025/07/PHOTO-2025-07-12-15-21-52-5-1.jpg"
+                  alt="Depoimento 3"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://receitassecretas.shop/wp-content/uploads/2025/07/PHOTO-2025-07-12-15-21-52-2-1.jpg"
+                  alt="Depoimento 4"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://receitassecretas.shop/wp-content/uploads/2025/07/PHOTO-2025-07-12-15-21-52-4-1.jpg"
+                  alt="Depoimento 5"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bonus">
+        <div class="container">
+          <h2 class="section-title text-center reveal">
+            Além de tudo isso, você vai ganhar<br /><span
+              >+4 Bônus Exclusivos!</span
+            >
+          </h2>
+          <div class="grid grid-4">
+            <div class="card bonus-card reveal">
+              <img
+                class="bonus-image"
+                src="https://receitassecretas.shop/wp-content/uploads/2024/10/PYpdEA4272075.webp"
+                alt="Bônus Bolos no Pote"
+              />
+              <div class="bonus-card-content">
+                <h3>Bolos no Pote</h3>
+                <p>
+                  Receitas versáteis e altamente lucrativas, perfeitas para
+                  vender o ano todo.
+                </p>
+              </div>
+              <div class="bonus-card-footer">
+                <span class="price-old"><s>R$29,90</s></span>
+                <span class="tag">GRATUITO</span>
+              </div>
+            </div>
+            <div class="card bonus-card reveal">
+              <img
+                class="bonus-image"
+                src="https://receitassecretas.shop/wp-content/uploads/2024/10/BNLGdd4286012.webp"
+                alt="Bônus Trufas"
+              />
+              <div class="bonus-card-content">
+                <h3>Trufas</h3>
+                <p>
+                  Aprenda a fazer trufas com baixo custo e altíssima margem de
+                  lucro.
+                </p>
+              </div>
+              <div class="bonus-card-footer">
+                <span class="price-old"><s>R$39,90</s></span>
+                <span class="tag">GRATUITO</span>
+              </div>
+            </div>
+            <div class="card bonus-card reveal">
+              <img
+                class="bonus-image"
+                src="https://receitassecretas.shop/wp-content/uploads/2024/10/JhukPk4304358.webp"
+                alt="Bônus Brigadeiros"
+              />
+              <div class="bonus-card-content">
+                <h3>Brigadeiros</h3>
+                <p>
+                  Domine os segredos do doce mais amado do Brasil para se
+                  destacar.
+                </p>
+              </div>
+              <div class="bonus-card-footer">
+                <span class="price-old"><s>R$19,90</s></span>
+                <span class="tag">GRATUITO</span>
+              </div>
+            </div>
+            <div class="card bonus-card reveal">
+              <img
+                class="bonus-image"
+                src="https://receitassecretas.shop/wp-content/uploads/2024/10/ivxmMv4351874.webp"
+                alt="Bônus Donuts"
+              />
+              <div class="bonus-card-content">
+                <h3>Donuts</h3>
+                <p>
+                  Inove seu cardápio com o doce que gera curiosidade e desejo
+                  nos clientes.
+                </p>
+              </div>
+              <div class="bonus-card-footer">
+                <span class="price-old"><s>R$29,90</s></span>
+                <span class="tag">GRATUITO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="guarantee">
+        <div class="container">
+          <div class="grid grid-2">
+            <div class="text-content reveal">
+              <h2 class="section-title">Garantia <span>Incondicional</span></h2>
+              <p>
+                Ainda não tem certeza? Não se preocupe. Se o conteúdo descrito
+                acima não for o mesmo que você receber, você tem
+                <strong>7 dias de garantia</strong> e devolvemos todo o seu
+                dinheiro sem complicações! Lembrando que seu acesso à plataforma
+                é para sempre.
+              </p>
+            </div>
+            <div class="image-content reveal">
+              <img
+                src="https://receitassecretas.shop/wp-content/uploads/2025/07/download-1.png"
+                alt="Selo de Garantia"
+              />
+            </div>
+          </div>
+          <div
+            class="grid grid-2"
+            style="margin-top: 80px; align-items: center"
+          >
+            <div class="image-content reveal">
+              <img
+                src="https://receitassecretas.shop/wp-content/uploads/2025/07/ChatGPT-Image-Jul-24-2025-09_14_14-AM.png"
+                alt="Certificado de Conclusão"
+              />
+            </div>
+            <div class="text-content reveal">
+              <h2 class="section-title">Certificado <span>Incluso</span></h2>
+              <p>
+                Ao concluir o curso de <em>Morango do Amor Profissional</em>,
+                você receberá um certificado exclusivo, reconhecendo todo o seu
+                aprendizado e dedicação! Comprove suas habilidades e expanda
+                suas oportunidades no mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="teacher">
+        <div class="container grid grid-2">
+          <div class="text-content reveal">
+            <h2 class="section-title">
+              Quem será sua <span>professora?</span>
+            </h2>
+            <h3>Júlia Rodriguez</h3>
+            <p>
+              Confeiteira há mais de 7 anos e especialista em doces virais. Já
+              ajudei mais de 18.200 alunas a conquistarem uma nova fonte de
+              renda. Fui uma das primeiras a dominar a técnica perfeita do
+              <strong>Morango do Amor</strong>, muito antes de viralizar. Agora,
+              quero compartilhar todos os segredos com você para aproveitar essa
+              onda milionária.
+            </p>
+          </div>
+          <div class="reveal">
+            <img
+              src="https://i.postimg.cc/L8dqV9mD/Design-sem-nome-1.png"
+              alt="Foto da professora Júlia Rodriguez"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="vagas-limitadas">
+        <div class="container text-center">
+          <div class="reveal">
+            <h2 class="section-title">⚠️ Vagas <span>Limitadas!</span></h2>
+            <p>
+              Infelizmente, consigo liberar apenas 10 cupons promocionais por
+              semana.
+            </p>
+            <div class="progress-bar-container">
+              <div class="progress-bar">87% Preenchido</div>
+            </div>
+            <p>
+              <strong
+                >Após finalizar as vagas, o valor será reajustado ao preço
+                cheio.</strong
+              ><br />Clique abaixo para garantir sua vaga no preço promocional!
+            </p>
+            <div class="cta-container" style="margin-top: 30px">
+              <a href="https://pay.cakto.com.br/yekdqt7_495208" class="btn"
+                >GARANTIR MINHA VAGA</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="container">
+          <h2 class="section-title reveal">
+            Preço Promocional por <span>Tempo Limitado!</span>
+          </h2>
+          <p class="reveal">
+            Você terá acesso a essa oportunidade única hoje com mais de
+            <strong>90% de desconto e acesso vitalício.</strong>
+          </p>
+
+          <div class="pricing-box reveal">
+            <img
+              src="https://i.postimg.cc/MKtzL9Y4/Chat-GPT-Image-26-de-jul-de-2025-12-37-03.png"
+              alt="Capa do Ebook Morango do Amor"
+              class="pricing-ebook-image"
+            />
+
+            <p class="price-old">DE R$197,00 POR APENAS:</p>
+            <h3 class="price-main">6x de <span>R$ 5,52</span></h3>
+            <p>ou</p>
+            <p class="price-alt">R$ 27,99 à vista</p>
+
+            <ul>
+              <li>Acesso ao Curso Morango do Amor</li>
+              <li>+4 Bônus de Presente</li>
+              <li>Pagamento Único e Acesso Vitalício</li>
+              <li>Acesso Imediato pelo Celular ou PC</li>
+              <li>Suporte pelo Whatsapp</li>
+              <li>30 Dias de Garantia</li>
+            </ul>
+
+            <div class="cta-container">
+              <a
+                href="https://pay.cakto.com.br/yekdqt7_495208"
+                class="btn btn-large"
+                >🍓 QUERO COMPRAR AGORA!</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <h2 class="section-title text-center reveal">
+            Perguntas <span>Frequentes</span>
+          </h2>
+          <div class="faq-container reveal">
+            <details class="faq-item">
+              <summary>Para quem é indicado este curso?</summary>
+              <div class="faq-content">
+                <p>
+                  Este curso é ideal para qualquer pessoa, desde iniciantes sem
+                  experiência até confeiteiros avançados que desejam dominar a
+                  técnica do doce mais viral de 2025, seja para empreender,
+                  gerar renda extra ou fazer para a família.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Como obter o material?</summary>
+              <div class="faq-content">
+                <p>
+                  Logo após o pagamento, em menos de dois minutos, você receberá
+                  o acesso por email a uma área de membros privada, onde poderá
+                  acessar todo o material e baixá-lo em seu celular ou
+                  computador.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Qual a duração da garantia?</summary>
+              <div class="faq-content">
+                <p>
+                  Você tem uma garantia incondicional de 30 dias. Se por
+                  qualquer motivo não ficar satisfeita(o), pode solicitar a
+                  devolução total do seu dinheiro, sem complicações.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Quais as formas de pagamentos?</summary>
+              <div class="faq-content">
+                <p>
+                  Aceitamos pagamentos via PIX ou cartão de crédito, podendo
+                  parcelar em até 6x.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Tenho que pagar todo mês?</summary>
+              <div class="faq-content">
+                <p>
+                  Não. O pagamento é único e você terá acesso vitalício (para
+                  sempre) ao curso e a todas as futuras atualizações, sem custos
+                  adicionais.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Preciso de equipamentos especiais?</summary>
+              <div class="faq-content">
+                <p>
+                  Não. Ensinamos a trabalhar com materiais e utensílios que você
+                  provavelmente já possui em casa. Sugestões de ferramentas
+                  avançadas são opcionais.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          Copyright 2025 - Morango do Amor Lucrativo ®️ | Todos os Direitos
+          Reservados.
+        </p>
+        <p>
+          Este site e todo o seu conteúdo estão protegidos pelos direitos do
+          autor e não podem ser reproduzidos sem permissão.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Script para animação de scroll (sem alterações)
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    </script>
+  </body>
+</html>
