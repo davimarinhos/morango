@@ -588,15 +588,20 @@
           gap: 25px;
         }
 
+        /* --- ✨ [NOVA ALTERAÇÃO] Centralização da Seção "Professora" --- */
         #teacher .grid-2 {
           display: flex;
           flex-direction: column-reverse;
           gap: 40px;
         }
         #teacher img {
-          max-width: 50%; /* Um pouco menor para respirar */
+          max-width: 50%;
           margin: 0 auto;
         }
+        #teacher .text-content {
+          text-align: center; /* Centraliza todo o texto (h2, h3, p) */
+        }
+        /* --- Fim da alteração --- */
 
         /* Centralizar cards para melhor visualização em coluna única */
         #reasons .reason-card {
@@ -618,7 +623,7 @@
           display: none;
         }
         .faq-item summary {
-            font-size: 1rem;
+          font-size: 1rem;
         }
       }
     </style>
